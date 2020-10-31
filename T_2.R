@@ -6,14 +6,9 @@ plot(Trees$'Ht (m)', Trees$'Crown Diameter (m)')
 plot(Trees$'Ht (m)', Trees$'Crown Diameter (m)', xlab = "Высота (м)", ylab = "Диаметр кроны (м)")
 install.packages("ggplot2")
 library(ggplot2)
-plot(Trees$`Ht (m)`, Trees$`Crown Diameter (m)`)
-plot(Trees1$`Ht (m)`, Trees1$`Crown Diameter (m)`)
-plot(Trees1$`Ht (m)`, Trees1$`Crown Diameter (m)`, xlab = "Высота (м)", ylab = "Диаметр кроны (м)")
 ggplot(Trees1, aes(x = 'Ht (m)', y = 'Crown Diameter (m)')) + geom_point()
 ggplot(Trees1, aes(x = 'Ht (m)', y = 'Crown Diameter (m)', color = Species)) + geom_point()
-install.packages("tidyverse")
-library("tidyverse")
-ggplot(Trees1, aes(x = `Ht (m)`, y = `Crown Diameter (m)`, color = Species)) + geom_point()
+
 
 #Задание. Произвести "очистку" таблицы таким образом, что:
 #Все переменные имеют корректный тип данных
@@ -70,6 +65,7 @@ units(Trees1$Stem_diameter_Jan_2017) = as_units("mm")
 units(Trees1$Second_yr_dia_gain) = as_units("mm")
 units(Trees1$Annual_Girth_Increment) = as_units("mm")
 units(Trees1$`Predicted crown diamet using combined formulla`) = as_units("m")
+
 
 #Если какая-то переменная является ошибкой другой переменной, она должна быть убрана и добавлена в виде ошибки к основной переменной
 
